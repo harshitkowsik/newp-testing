@@ -18,9 +18,5 @@
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
-  },
-  "description": "This repository contains the source code for the personal portfolio website of Dr. Ashutosh Mishra. The site is a modern, responsive single-page application (SPA) built with React and TypeScript, designed to showcase his professional experience, services, publications, and ventures.",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC"
+  }
 }
