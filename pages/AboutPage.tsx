@@ -63,7 +63,7 @@ const AboutPage: React.FC = () => {
               alt="Dr. Ashutosh Mishra"
             />
             <h2 className="mt-6 text-2xl font-bold text-secondary font-heading">Dr. Ashutosh Mishra</h2>
-            <p className="text-gray-500">PhD, MBA, B.Ed, LL.M.</p>
+            <p className="text-gray-500">MBA, M.Ed, LL.M., PhD</p>
             <div className="mt-4 text-sm font-semibold text-primary space-y-1">
               <p>IIM Ahmedabad Alumnus</p>
               <p>Project Management (IIT Delhi)</p>
