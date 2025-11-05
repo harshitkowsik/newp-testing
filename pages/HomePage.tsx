@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../SEO';
 import { Link } from 'react-router-dom';
 import { services, keyExpertise } from '../constants';
 import { CheckmarkIcon, QuoteIcon } from '../components/icons/Icons';
@@ -7,12 +6,6 @@ import { CheckmarkIcon, QuoteIcon } from '../components/icons/Icons';
 const HomePage: React.FC = () => {
   return (
     <div className="bg-white">
-      <SEO 
-        title="Dr. Ashutosh Mishra - Strategic Growth and Educational Innovation"
-        description="Dr. Ashutosh Mishra is a seasoned professional with over 22 years of experience in strategic growth, educational innovation, and legal expertise. Learn more about his work and philosophy."
-        keywords="Dr. Ashutosh Mishra, strategic growth, educational innovation, legal expertise, management, education, leadership"
-        pathname="/"
-      />
       {/* Hero Section */}
       <section className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('https://picsum.photos/1920/1080?grayscale&blur=2')" }}>
         <div className="absolute inset-0 bg-primary opacity-80"></div>

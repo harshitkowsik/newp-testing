@@ -1,16 +1,9 @@
-import SEO from '../SEO';
 import React from 'react';
 
 
 const TermsPage: React.FC = () => {
   return (
     <div className="bg-white py-16">
-      <SEO 
-        title="Terms and Conditions - Dr. Ashutosh Mishra"
-        description="Read the terms and conditions for using the website of Dr. Ashutosh Mishra. Understand the rules and guidelines for accessing our services."
-        keywords="terms and conditions, terms of service, website policy, legal terms, Dr. Ashutosh Mishra"
-        pathname="/terms"
-      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold font-heading text-primary">Terms and Conditions</h1>

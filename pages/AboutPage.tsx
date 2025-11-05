@@ -1,6 +1,5 @@
 
 import React from 'react';
-import SEO from '../SEO';
 import { keyExpertise } from '../constants';
 
 const AboutPage: React.FC = () => {
@@ -45,12 +44,7 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="bg-white py-16">
-      <SEO 
-        title="About Dr. Ashutosh Mishra - A Multifaceted Career"
-        description="Learn about Dr. Ashutosh Mishra's extensive background in academia, law, and corporate strategy. Discover his core philosophy, key expertise, and global leadership roles."
-        keywords="About Dr. Ashutosh Mishra, leadership, corporate strategy, academia, law, PhD, MBA, global leadership"
-        pathname="/about"
-      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold font-heading text-primary">About Dr. Ashutosh Mishra</h1>

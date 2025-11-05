@@ -1,18 +1,11 @@
 
 import React from 'react';
-import SEO from '../SEO';
 import { Link } from 'react-router-dom';
 import { ngoData } from '../constants';
 
 const NGOsListPage: React.FC = () => {
   return (
     <div className="bg-light-bg py-16">
-      <SEO 
-        title="NGOs Founded by Dr. Ashutosh Mishra"
-        description="Explore the non-profit organizations founded by Dr. Ashutosh Mishra, all dedicated to social change and empowerment in various sectors."
-        keywords="NGOs, non-profit organizations, Dr. Ashutosh Mishra, social change, empowerment, social sector"
-        pathname="/ngos"
-      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold font-heading text-primary">NGOs Founded by Dr. Mishra</h1>

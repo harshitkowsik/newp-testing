@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import SEO from '../SEO';
 import { MailIcon, PhoneIcon } from '../components/icons/Icons';
 
 interface FormData {
@@ -103,12 +102,6 @@ const ContactPage: React.FC = () => {
 
     return (
         <div className="bg-white py-16">
-            <SEO 
-                title="Contact & Appointments - Dr. Ashutosh Mishra"
-                description="Book an appointment with Dr. Ashutosh Mishra to discuss your case. Find contact information and schedule a consultation for legal, business, or educational services."
-                keywords="book appointment, contact Dr. Ashutosh Mishra, legal consultation, business strategy, educational services, contact information"
-                pathname="/contact"
-            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl font-extrabold font-heading text-primary">Book an Appointment</h1>

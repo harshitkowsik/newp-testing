@@ -1,16 +1,10 @@
-import SEO from '../SEO';
+
 import React from 'react';
 
 
 const PrivacyPolicyPage: React.FC = () => {
   return (
     <div className="bg-white py-16">
-      <SEO 
-        title="Privacy Policy - Dr. Ashutosh Mishra"
-        description="Read the privacy policy for the website of Dr. Ashutosh Mishra. Understand how we collect, use, and protect your personal information."
-        keywords="privacy policy, data protection, personal information, website privacy, Dr. Ashutosh Mishra"
-        pathname="/privacy"
-      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold font-heading text-primary">Privacy Policy</h1>

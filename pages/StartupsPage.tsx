@@ -1,16 +1,9 @@
 import React from 'react';
-import SEO from '../SEO';
 import { startups } from '../constants';
 
 const StartupsPage: React.FC = () => {
   return (
     <div className="bg-light-bg py-16">
-      <SEO 
-        title="Startup Ventures - Dr. Ashutosh Mishra"
-        description="Explore the successful startup ventures founded and launched by Dr. Ashutosh Mishra, a professional serial entrepreneur contributing to societal development."
-        keywords="Dr. Ashutosh Mishra startups, serial entrepreneur, startup ventures, societal development, youth opportunities"
-        pathname="/startups"
-      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold font-heading text-primary">Startup Ventures</h1>

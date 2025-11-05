@@ -1,16 +1,9 @@
 import React from 'react';
-import SEO from '../SEO';
 import { books } from '../constants';
 
 const BooksPage: React.FC = () => {
   return (
     <div className="bg-light-bg py-16">
-      <SEO 
-        title="Authored Books - Dr. Ashutosh Mishra"
-        description="Explore a collection of books authored by Dr. Ashutosh Mishra on topics ranging from law and social issues to education and management."
-        keywords="Dr. Ashutosh Mishra books, law books, education books, social issues books, management books, authored books"
-        pathname="/books"
-      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold font-heading text-primary">Authored Books</h1>

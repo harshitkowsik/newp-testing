@@ -1,6 +1,5 @@
 
 import React from 'react';
-import SEO from '../SEO';
 import { certifications, awards } from '../constants';
 
 const HighlightsPage: React.FC = () => {
@@ -28,12 +27,6 @@ const HighlightsPage: React.FC = () => {
 
     return (
         <div className="bg-light-bg py-16">
-            <SEO 
-                title="Professional Highlights - Dr. Ashutosh Mishra"
-                description="Discover the professional highlights of Dr. Ashutosh Mishra, including his certifications, awards, key strengths, and language proficiency."
-                keywords="certifications, awards, professional qualifications, key strengths, Dr. Ashutosh Mishra, highlights"
-                pathname="/highlights"
-            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl font-extrabold font-heading text-primary">Professional Highlights</h1>

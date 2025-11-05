@@ -1,5 +1,4 @@
 import React from 'react';
-import SEO from '../SEO';
 import { services } from '../constants';
 import { Link } from 'react-router-dom';
 
@@ -44,12 +43,6 @@ const ServicesPage: React.FC = () => {
 
   return (
     <div className="bg-light-bg py-16">
-      <SEO 
-        title="Services - Dr. Ashutosh Mishra"
-        description="Explore the comprehensive suite of services offered by Dr. Ashutosh Mishra, including training, project management, legal consulting, educational innovation, and more."
-        keywords="corporate training, project management, legal consulting, educational innovation, business development, HR management, social impact"
-        pathname="/services"
-      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold font-heading text-primary">Our Services</h1>

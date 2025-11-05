@@ -1,6 +1,5 @@
 
 import React from 'react';
-import SEO from '../SEO';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { ngoData } from '../constants';
 
@@ -25,12 +24,6 @@ const NGODetailPage: React.FC = () => {
 
   return (
     <div className="bg-white py-16">
-      <SEO 
-        title={`${ngo.name} - NGO Founded by Dr. Ashutosh Mishra`}
-        description={ngo.tagline}
-        keywords={`${ngo.name}, NGO, Dr. Ashutosh Mishra, ${ngo.tagline}`}
-        pathname={location.pathname}
-      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
             <Link to="/ngos" className="text-primary hover:text-accent-teal font-semibold transition-colors duration-300">&larr; Back to all NGOs</Link>
