@@ -6,24 +6,26 @@ const AboutPage: React.FC = () => {
   const leadershipPrinciples = ['Friendly', 'Firm', 'Fair', 'Fit'];
 
   const education = [
-    { degree: "PhD in Management and Education", university: "Guru Ghasidas University", years: "2010-2013" },
-    { degree: "MBA", university: "Bundelkhand University", years: "2002-2004" },
-    { degree: "Bachelor of Education (B.Ed)", university: "Bundelkhand University", years: "2004-2005" },
-    { degree: "Bachelor's Degree", university: "Veer Bahadur Singh Purvanchal University, Jaunpur", years: "1999-2002; 2005-2008" },
-    { degree: "Master's Degree", university: "Chatrapati Sahuji Maharaj Kanpur University", years: "2008-2009" },
-    { degree: "Master's Degree (Law)", university: "National Law University, Jodhpur", years: "2011-2013" },
+    { degree: "PhD in Education", university: "Guru Ghasidas University", year: "2013" },
+    { degree: "PhD in Management", university: "Newport University, Latvia", year: "2011" },
+    { degree: "Master's in Law (LL.M)", university: "National Law University, Jodhpur", year: "2010" },
+    { degree: "Master's in Education (M.Ed)", university: "Chatrapati Sahuji Maharaj Kanpur University", year: "2009" },
+    { degree: "Bachelor's in Law (LL.B.)", university: "Veer Bahadur Singh Purvanchal University, Jaunpur", year: "2008" },
+    { degree: "Bachelor of Education (B.Ed)", university: "Bundelkhand University", year: "2005" },
+    { degree: "MBA", university: "Bundelkhand University", year: "2004" },
+    { degree: "Bachelor's Degree", university: "Veer Bahadur Singh Purvanchal University, Jaunpur", year: "2002" },
   ];
 
   const executiveEducation = [
-    { program: "Executive Program", institution: "IIM Ahmedabad", year: "2015" },
+    { program: "MDP: Essentials of Entrepreneurship", institution: "UC Irvine", year: "2017" },
+    { program: "Successful Negotiation: Essential Strategies and Skills", institution: "University of Michigan", year: "2017" },
     { program: "Leadership in 21st Century Organizations", institution: "Copenhagen Business School", years: "2016-2017" },
     { program: "Design Thinking for Innovation", institution: "University of Virginia", years: "2015-2016" },
-    { program: "MDP: Essentials of Entrepreneurship", institution: "UC Irvine", year: "2017" },
+    { program: "Executive Program", institution: "IIM Ahmedabad", year: "2015" },
     { program: "MDP Program", institution: "Duke University", year: "2015" },
-    { program: "Successful Negotiation: Essential Strategies and Skills", institution: "University of Michigan", year: "2017" },
     { program: "Program for Leaders in Management Education", institution: "IIM Ahmedabad", year: "2012" },
   ];
-  
+
   const globalRoles = [
     "Director (Legal Operations) – Innovation Society, New Delhi",
     "Head (Legal Operations) – Kaytee Foundation, New York",
@@ -55,7 +57,7 @@ const AboutPage: React.FC = () => {
 
         <div className="lg:grid lg:grid-cols-3 lg:gap-12 items-start">
           <div className="lg:col-span-1 text-center">
-            <img 
+            <img
               className="h-64 w-64 rounded-full mx-auto object-cover shadow-lg"
               src="fab-icon.png"
               alt="Dr. Ashutosh Mishra"
@@ -101,7 +103,7 @@ const AboutPage: React.FC = () => {
             <div>
               <h4 className="text-xl font-semibold mb-4 font-heading text-secondary">Educational Background</h4>
               <ul className="space-y-4">
-                {education.map((item, i) => <li key={i} className="border-l-4 border-accent-teal pl-4"><p className="font-bold">{item.degree}</p><p className="text-sm text-gray-600">{item.university} ({item.years})</p></li>)}
+                {education.map((item, i) => <li key={i} className="border-l-4 border-accent-teal pl-4"><p className="font-bold">{item.degree}</p><p className="text-sm text-gray-600">{item.university} ({item.year})</p></li>)}
               </ul>
             </div>
             <div>
@@ -112,16 +114,16 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
-        
+
         <section className="mt-20">
-            <h3 className="text-3xl font-bold font-heading text-center text-primary">Global Leadership Roles</h3>
-             <div className="mt-8 columns-1 md:columns-2 lg:columns-3 gap-4">
-                {globalRoles.map((role, index) => (
-                    <div key={index} className="bg-light-bg p-4 rounded-lg mb-4 break-inside-avoid">
-                        <p className="font-semibold text-gray-800">{role}</p>
-                    </div>
-                ))}
-            </div>
+          <h3 className="text-3xl font-bold font-heading text-center text-primary">Global Leadership Roles</h3>
+          <div className="mt-8 columns-1 md:columns-2 lg:columns-3 gap-4">
+            {globalRoles.map((role, index) => (
+              <div key={index} className="bg-light-bg p-4 rounded-lg mb-4 break-inside-avoid">
+                <p className="font-semibold text-gray-800">{role}</p>
+              </div>
+            ))}
+          </div>
         </section>
       </div>
     </div>

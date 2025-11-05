@@ -48,19 +48,19 @@ export const keyExpertise = [
 ];
 
 export const certifications = [
-  { title: "Six Sigma Black Belt Certification", issuer: "IACT International Academy", date: "Jan 2011" },
-  { title: "Project Management Professional (PMP)", issuer: "Indian Institute of Technology, Delhi", date: "Jul 2011" },
-  { title: "Strategic Leadership for Schools in a Changing Environment", issuer: "IIM Ahmedabad", date: "Oct 2014" },
   { title: "Business Analysis Professional Training", issuer: "Mindmap, Pune" },
+  { title: "Strategic Leadership for Schools in a Changing Environment", issuer: "IIM Ahmedabad", date: "Oct 2014" },
+  { title: "Project Management Professional (PMP)", issuer: "Indian Institute of Technology, Delhi", date: "Jul 2011" },
+  { title: "Six Sigma Black Belt Certification", issuer: "IACT International Academy", date: "Jan 2011" },
 ];
 
 export const awards = [
-  { title: "Best Faculty of The Year", issuer: "IIMT Group of Institutions", date: "Jul 2009" },
-  { title: "Manager of the Year", issuer: "IIMT Group of Institutions", date: "Jul 2010" },
-  { title: "Best 'Principal' Award", issuer: "Lions Club, Pune", date: "Sep 2014" },
-  { title: "International Award for Excellence", issuer: "Golden Star Awards", date: "Nov 2016" },
-  { title: "Bharat Vibhushan Award 2016", issuer: "Golden Star Awards", date: "Feb 2017" },
   { title: "International Award for Excellence in Education", issuer: "Simplii Jaipur & Helpage India", date: "Sep 2017" },
+  { title: "Bharat Vibhushan Award 2016", issuer: "Golden Star Awards", date: "Feb 2017" },
+  { title: "International Award for Excellence", issuer: "Golden Star Awards", date: "Nov 2016" },
+  { title: "Best 'Principal' Award", issuer: "Lions Club, Pune", date: "Sep 2014" },
+  { title: "Manager of the Year", issuer: "IIMT Group of Institutions", date: "Jul 2010" },
+  { title: "Best Faculty of The Year", issuer: "IIMT Group of Institutions", date: "Jul 2009" },
 ];
 
 export const ngoData = [
