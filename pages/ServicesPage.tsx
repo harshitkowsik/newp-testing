@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { services } from '../constants';
 import { Link } from 'react-router-dom';
 
 const ServicesPage: React.FC = () => {
-  useEffect(() => {
-    document.title = "Services | Dr. Ashutosh Mishra - Professional Consulting";
-  }, []);
-
   const serviceDetails = [
       {
         title: "Training & Development",
@@ -48,18 +44,18 @@ const ServicesPage: React.FC = () => {
   return (
     <div className="bg-light-bg py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-16" aria-labelledby="page-heading-services">
-          <h1 id="page-heading-services" className="text-4xl font-extrabold font-heading text-primary">Our Services</h1>
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-extrabold font-heading text-primary">Our Services</h1>
           <p className="mt-4 max-w-3xl mx-auto text-xl text-gray-600">
             A comprehensive suite of services designed to foster growth, innovation, and excellence across various sectors.
           </p>
-        </header>
+        </div>
 
-        <section className="space-y-12" aria-label="List of professional services">
+        <div className="space-y-12">
           {serviceDetails.map((service, index) => (
-            <article key={index} className="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row gap-8" aria-labelledby={`service-heading-${index}`}>
+            <div key={index} className="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row gap-8">
               <div className="md:w-1/3">
-                <h2 id={`service-heading-${index}`} className="text-2xl font-bold font-heading text-primary">{service.title}</h2>
+                <h2 className="text-2xl font-bold font-heading text-primary">{service.title}</h2>
                 <p className="mt-2 text-gray-600">{service.description}</p>
               </div>
               <div className="md:w-2/3">
@@ -72,23 +68,23 @@ const ServicesPage: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </article>
+            </div>
           ))}
-        </section>
+        </div>
         
-        <section className="mt-16 text-center bg-white p-8 rounded-lg shadow-xl border border-primary/20" aria-labelledby="cta-heading">
-          <h2 id="cta-heading" className="text-2xl font-bold font-heading text-secondary">Ready to drive growth in your organization?</h2>
+        <div className="mt-16 text-center bg-white p-8 rounded-lg shadow-xl border border-primary/20">
+          <h2 className="text-2xl font-bold font-heading text-secondary">Ready to drive growth in your organization?</h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             Contact us today to discuss how our expertise can be tailored to meet your specific needs and goals.
           </p>
           <Link to="/contact" className="mt-6 inline-block bg-primary text-white hover:bg-primary/90 font-bold py-3 px-8 rounded-full text-lg transition duration-300">
             Book an Appointment
           </Link>
-        </section>
+        </div>
 
       </div>
     </div>
   );
 };
 
-export default ServicesPage;  
+export default ServicesPage;

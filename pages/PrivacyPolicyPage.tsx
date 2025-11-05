@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react';
+
+import React from 'react';
+
 
 const PrivacyPolicyPage: React.FC = () => {
-  useEffect(() => {
-    document.title = "Privacy Policy | Dr. Ashutosh Mishra";
-  }, []);
-
   return (
     <div className="bg-white py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-12" aria-labelledby="page-heading-privacy">
-          <h1 id="page-heading-privacy" className="text-4xl font-extrabold font-heading text-primary">Privacy Policy</h1>
-          <p className="mt-2 text-gray-500">Last updated: {new Date().toLocaleDateString()}</p>
-        </header>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-extrabold font-heading text-primary">Privacy Policy</h1>
+          <p className="mt-2 text-gray-500">Last updated: October 17, 2023</p>
+        </div>
 
-        <article className="prose prose-lg max-w-none text-gray-700">
+        <div className="prose prose-lg max-w-none text-gray-700">
           <h2>1. Introduction</h2>
           <p>
             This Privacy Policy describes how we collect, use, and handle your personal information when you use the website of Dr. Ashutosh Mishra (the "Service"). We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner.
@@ -65,7 +63,7 @@ const PrivacyPolicyPage: React.FC = () => {
           <p>
             If you have any questions about this Privacy Policy, please contact us at <a href="mailto:write2me@dramishra.in" className="text-primary hover:underline">write2me@dramishra.in</a>.
           </p>
-        </article>
+        </div>
       </div>
     </div>
   );

@@ -1,18 +1,12 @@
-import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+
+import React from 'react';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { ngoData } from '../constants';
 
 const NGODetailPage: React.FC = () => {
   const { ngoId } = useParams<{ ngoId: string }>();
+  const location = useLocation();
   const ngo = ngoData.find(n => n.id === ngoId);
-
-  useEffect(() => {
-    if (ngo) {
-      document.title = `${ngo.name} | Dr. Ashutosh Mishra`;
-    } else {
-      document.title = "NGO Not Found | Dr. Ashutosh Mishra";
-    }
-  }, [ngo]);
 
   if (!ngo) {
     return (

@@ -1,12 +1,8 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { keyExpertise } from '../constants';
 
 const AboutPage: React.FC = () => {
-  useEffect(() => {
-    document.title = "About Dr. Ashutosh Mishra | Career & Philosophy";
-  }, []);
-
   const leadershipPrinciples = ['Friendly', 'Firm', 'Fair', 'Fit'];
 
   const education = [
@@ -51,105 +47,85 @@ const AboutPage: React.FC = () => {
   return (
     <div className="bg-white py-16">
 
-      <header className="text-center mb-16" aria-labelledby="page-heading">
-        <h1 id="page-heading" className="text-4xl font-extrabold font-heading text-primary">About Dr. Ashutosh Mishra</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-xl text-gray-600">
-          A dynamic leader with a multifaceted career spanning academia, law, and corporate strategy.
-        </p>
-      </header>
-
-      <section aria-label="Profile introduction" className="lg:grid lg:grid-cols-3 lg:gap-12 items-start">
-        <div className="lg:col-span-1 text-center">
-          <img
-            className="h-64 w-64 rounded-full mx-auto object-cover shadow-lg"
-            src="fab-icon.png"
-            alt="Dr. Ashutosh Mishra"
-          />
-          <h2 className="mt-6 text-2xl font-bold text-secondary font-heading">Dr. Ashutosh Mishra</h2>
-          <p className="text-gray-500">MBA, M.Ed, LL.M., PhD</p>
-          <div className="mt-4 text-sm font-semibold text-primary space-y-1">
-            <p>IIM Ahmedabad Alumnus</p>
-            <p>Project Management (IIT Delhi)</p>
-            <p>Certified NLP Coach</p>
-          </div>
-        </div>
-
-        <div className="lg:col-span-2 mt-12 lg:mt-0">
-          <h3 className="text-2xl font-bold font-heading text-primary">Professional Summary</h3>
-          <p className="mt-4 text-lg text-gray-700 leading-relaxed pr-5">
-            With a PhD in Management and Education and over 22 years of diverse experience, I have built a career that bridges academia, legal expertise, and business strategy. My core philosophy is grounded in the 4 F's—Friendly, Firm, Fair, and Fit—principles that guide my approach to leadership and organizational growth.
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-extrabold font-heading text-primary">About Dr. Ashutosh Mishra</h1>
+          <p className="mt-4 max-w-3xl mx-auto text-xl text-gray-600">
+            A dynamic leader with a multifaceted career spanning academia, law, and corporate strategy.
           </p>
         </div>
-      </section>
 
-      <section className="mt-20" aria-labelledby="strengths-heading">
-        <h3 id="strengths-heading" className="text-3xl font-bold font-heading text-center text-primary">Signature Strengths</h3>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-light-bg p-6 rounded-lg text-center shadow-md border-t-4 border-accent-gold">
-            <h4 className="text-xl font-bold text-secondary">IIM Ahmedabad Alumnus</h4>
-            <p className="mt-2 text-gray-600">Leveraging strategic insights and leadership principles from one of India’s premier institutions to drive business excellence.</p>
+        <div className="lg:grid lg:grid-cols-3 lg:gap-12 items-start">
+          <div className="lg:col-span-1 text-center">
+            <img
+              className="h-64 w-64 rounded-full mx-auto object-cover shadow-lg"
+              src="fab-icon.png"
+              alt="Dr. Ashutosh Mishra"
+            />
+            <h2 className="mt-6 text-2xl font-bold text-secondary font-heading">Dr. Ashutosh Mishra</h2>
+            <p className="text-gray-500">PhD, MBA, B.Ed, LL.M.</p>
           </div>
-          <div className="bg-light-bg p-6 rounded-lg text-center shadow-md border-t-4 border-accent-teal">
-            <h4 className="text-xl font-bold text-secondary">Project Management (IIT Delhi)</h4>
-            <p className="mt-2 text-gray-600">Applying rigorous, process-driven project management methodologies to ensure flawless execution and delivery.</p>
-          </div>
-          <div className="bg-light-bg p-6 rounded-lg text-center shadow-md border-t-4 border-primary">
-            <h4 className="text-xl font-bold text-secondary">Certified NLP Coach</h4>
-            <p className="mt-2 text-gray-600">Utilizing Neuro-Linguistic Programming for advanced psychological profiling, enhancing communication and leadership effectiveness.</p>
+
+          <div className="lg:col-span-2 mt-12 lg:mt-0">
+            <h3 className="text-2xl font-bold font-heading text-primary">Professional Summary</h3>
+            <p className="mt-4 text-lg text-gray-700 leading-relaxed">
+              With a PhD in Management and Education and over 22 years of diverse experience, I have built a career that bridges academia, legal expertise, and business strategy. My core philosophy is grounded in the 4 F's—Friendly, Firm, Fair, and Fit—principles that guide my approach to leadership and organizational growth.
+            </p>
           </div>
         </div>
-      </section>
 
-      <section className="mt-20" aria-labelledby="philosophy-heading">
-        <h3 id="philosophy-heading" className="text-3xl font-bold font-heading text-center text-primary">Core Philosophy: The 4 F's of Leadership</h3>
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {leadershipPrinciples.map((principle) => (
-            <div key={principle} className="bg-light-bg p-6 rounded-lg text-center shadow-md">
-              <p className="text-5xl font-extrabold text-primary opacity-20">{principle.charAt(0)}</p>
-              <h4 className="text-xl font-bold text-secondary -mt-6">{principle}</h4>
+        <section className="mt-20">
+          <h3 className="text-3xl font-bold font-heading text-center text-primary">Core Philosophy: The 4 F's of Leadership</h3>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {leadershipPrinciples.map((principle) => (
+              <div key={principle} className="bg-light-bg p-6 rounded-lg text-center shadow-md">
+                <p className="text-5xl font-extrabold text-primary opacity-20">{principle.charAt(0)}</p>
+                <h4 className="text-xl font-bold text-secondary -mt-6">{principle}</h4>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-20">
+          <h3 className="text-3xl font-bold font-heading text-center text-primary">Key Expertise Areas</h3>
+          <div className="mt-8 max-w-4xl mx-auto flex flex-wrap justify-center gap-3">
+            {keyExpertise.map((item, index) => (
+              <span key={index} className="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
+                {item}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-20">
+          <h3 className="text-3xl font-bold font-heading text-center text-primary">Educational & Professional Journey</h3>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h4 className="text-xl font-semibold mb-4 font-heading text-secondary">Educational Background</h4>
+              <ul className="space-y-4">
+                {education.map((item, i) => <li key={i} className="border-l-4 border-accent-teal pl-4"><p className="font-bold">{item.degree}</p><p className="text-sm text-gray-600">{item.university} ({item.year})</p></li>)}
+              </ul>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-20" aria-labelledby="expertise-heading-about">
-        <h3 id="expertise-heading-about" className="text-3xl font-bold font-heading text-center text-primary">Key Expertise Areas</h3>
-        <div className="mt-8 max-w-4xl mx-auto flex flex-wrap justify-center gap-3">
-          {keyExpertise.map((item, index) => (
-            <span key={index} className="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
-              {item}
-            </span>
-          ))}
-        </div>
-      </section>
-      <section className="mt-20" aria-labelledby="journey-heading">
-        <h3 id="journey-heading" className="text-3xl font-bold font-heading text-center text-primary">Educational & Professional Journey</h3>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div aria-labelledby="education-subheading">
-            <h4 id="education-subheading" className="text-xl font-semibold mb-4 font-heading text-secondary">Educational Background</h4>
-            <ul className="space-y-4">
-              {education.map((item, i) => <li key={i} className="border-l-4 border-accent-teal pl-4"><p className="font-bold">{item.degree}</p><p className="text-sm text-gray-600">{item.university} ({item.year})</p></li>)}
-            </ul>
-          </div>
-          <div aria-labelledby="exec-education-subheading">
-            <h4 id="exec-education-subheading" className="text-xl font-semibold mb-4 font-heading text-secondary">Executive Education</h4>
-            <ul className="space-y-4">
-              {executiveEducation.map((item, i) => <li key={i} className="border-l-4 border-accent-gold pl-4"><p className="font-bold">{item.program}</p><p className="text-sm text-gray-600">{item.institution} ({item.years || item.year})</p></li>)}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="mt-20" aria-labelledby="roles-heading">
-        <h3 id="roles-heading" className="text-3xl font-bold font-heading text-center text-primary">Global Leadership Roles</h3>
-        <div className="mt-8 columns-1 md:columns-2 lg:columns-3 gap-4">
-          {globalRoles.map((role, index) => (
-            <div key={index} className="bg-light-bg p-4 rounded-lg mb-4 break-inside-avoid">
-              <p className="font-semibold text-gray-800">{role}</p>
+            <div>
+              <h4 className="text-xl font-semibold mb-4 font-heading text-secondary">Executive Education</h4>
+              <ul className="space-y-4">
+                {executiveEducation.map((item, i) => <li key={i} className="border-l-4 border-accent-gold pl-4"><p className="font-bold">{item.program}</p><p className="text-sm text-gray-600">{item.institution} ({item.years || item.year})</p></li>)}
+              </ul>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+
+        <section className="mt-20">
+          <h3 className="text-3xl font-bold font-heading text-center text-primary">Global Leadership Roles</h3>
+          <div className="mt-8 columns-1 md:columns-2 lg:columns-3 gap-4">
+            {globalRoles.map((role, index) => (
+              <div key={index} className="bg-light-bg p-4 rounded-lg mb-4 break-inside-avoid">
+                <p className="font-semibold text-gray-800">{role}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

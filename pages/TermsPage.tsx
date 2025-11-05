@@ -1,19 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+
 
 const TermsPage: React.FC = () => {
-  useEffect(() => {
-    document.title = "Terms and Conditions | Dr. Ashutosh Mishra";
-  }, []);
-
   return (
     <div className="bg-white py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-12" aria-labelledby="page-heading-terms">
-          <h1 id="page-heading-terms" className="text-4xl font-extrabold font-heading text-primary">Terms and Conditions</h1>
-          <p className="mt-2 text-gray-500">Last updated: {new Date().toLocaleDateString()}</p>
-        </header>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-extrabold font-heading text-primary">Terms and Conditions</h1>
+          <p className="mt-2 text-gray-500">Last updated: October 17, 2023</p>
+        </div>
 
-        <article className="prose prose-lg max-w-none text-gray-700">
+        <div className="prose prose-lg max-w-none text-gray-700">
           <p>
             Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the website of Dr. Ashutosh Mishra (the "Service") operated by us. Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who wish to access or use the Service.
           </p>
@@ -65,7 +62,7 @@ const TermsPage: React.FC = () => {
           <p>
             If you have any questions about these Terms, please contact us at <a href="mailto:write2me@dramishra.in" className="text-primary hover:underline">write2me@dramishra.in</a>.
           </p>
-        </article>
+        </div>
       </div>
     </div>
   );
