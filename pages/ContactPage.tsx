@@ -1,6 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { MailIcon, PhoneIcon } from '../components/icons/Icons';
 
+
+// New data structure for services
+const serviceOptions = {
+    'counselling': {
+        label: 'Counselling',
+        subServices: [
+            'Child Counselling',
+            'Relationship Counselling',
+            'Career Counselling'
+        ]
+    },
+    'coaching': {
+        label: 'Coaching',
+        subServices: [
+            'Business Coach',
+            'Life Coach',
+            'Career and Growth'
+        ]
+    },
+    'legal-consultation': {
+        label: 'Legal Consultation',
+        subServices: [
+            'Civil Litigation',
+            'Criminal Litigation',
+            'Corporate Consultation',
+            'Non-Litigation'
+        ]
+    },
+    'strategic-consultation': {
+        label: 'Strategic Consultation',
+        subServices: [
+            'Startups',
+            'MSME',
+            'Corporate',
+            'Pain Points Discussion (Competition/Market Challenges)'
+        ]
+    }
+};
+
+type ServiceKey = keyof typeof serviceOptions;
+
+
+
 interface FormData {
     name: string;
     email: string;
@@ -34,17 +77,25 @@ const ContactPage: React.FC = () => {
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
-    
     // --- State for dynamic dropdown options ---
     const [availableHours, setAvailableHours] = useState<string[]>(['10', '11']);
     const [availableMinutes, setAvailableMinutes] = useState<string[]>(['00', '15', '30', '45']);
 
     const allMinutes = ['00', '15', '30', '45'];
-    const services = ["Property Case", "Family Case", "Civil Case", "Corporate Case", "Criminal Case", "Other"];
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+
+        if (name === 'mainService') {
+            // If main service changes, reset sub-service
+            setFormData(prev => ({
+                ...prev,
+                mainService: value,
+                subService: ''
+            }));
+        } else {
+            setFormData(prev => ({ ...prev, [name]: value }));
+        }
     };
 
     // --- Dynamic time validation logic ---
@@ -61,7 +112,7 @@ const ContactPage: React.FC = () => {
         if (!currentHours.includes(formData.hour)) {
             setFormData(prev => ({ ...prev, hour: currentHours[0] }));
         }
-        
+
         // Handle the 5:00 PM edge case
         if (formData.ampm === 'PM' && formData.hour === '05') {
             setAvailableMinutes(['00']);
@@ -74,7 +125,7 @@ const ContactPage: React.FC = () => {
 
     }, [formData.ampm, formData.hour, formData.minute]);
 
-    
+
     const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setErrors({});
@@ -122,11 +173,11 @@ const ContactPage: React.FC = () => {
                                 <MailIcon />
                                 <div>
                                     <h3 className="font-semibold">Email</h3>
-                                    <a href="mailto:write2me@dramishra.in" className="text-primary hover:underline">write2me@dramishra.in</a><br/>
+                                    <a href="mailto:write2me@dramishra.in" className="text-primary hover:underline">write2me@dramishra.in</a><br />
                                     <a href="mailto:advdrashutosh.mishra@gmail.com" className="text-primary hover:underline">advdrashutosh.mishra@gmail.com</a>
                                 </div>
                             </div>
-                             <div className="flex items-center space-x-3">
+                            <div className="flex items-center space-x-3">
                                 <PhoneIcon />
                                 <div>
                                     <h3 className="font-semibold">Phone</h3>
@@ -157,16 +208,16 @@ const ContactPage: React.FC = () => {
                                     <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleInputChange} placeholder="Enter Your Phone Number" required className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary" />
                                 </div>
                             </div>
-                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="date" className="block text-sm font-medium text-gray-700">Preferred Date *</label>
-                                    <input 
-                                        type="date" 
-                                        name="date" 
+                                    <input
+                                        type="date"
+                                        name="date"
                                         id="date"
                                         value={formData.date}
                                         onChange={handleInputChange}
-                                        required 
+                                        required
                                         className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
                                     />
                                     {errors.date && <p className="mt-1 text-xs text-red-600">{errors.date}</p>}
@@ -188,17 +239,31 @@ const ContactPage: React.FC = () => {
                                 </div>
                             </div>
                             <div>
-                                <label htmlFor="service" className="block text-sm font-medium text-gray-700">Service Required *</label>
-                                <select id="service" name="service" value={formData.service} onChange={handleInputChange} required className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
-                                    <option value="" disabled>-- Select a Service --</option>
-                                    {services.map(s => <option key={s} value={s.toLowerCase().replace(/ /g, '-')}>{s}</option>)}
+                                <label htmlFor="mainService" className="block text-sm font-medium text-gray-700">Service Required *</label>
+                                <select id="mainService" name="mainService" value={formData.mainService} onChange={handleInputChange} required className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                    <option value="" disabled>-- Select a Service Category --</option>
+                                    {Object.entries(serviceOptions).map(([key, { label }]) => (
+                                        <option key={key} value={key}>{label}</option>
+                                    ))}
                                 </select>
                             </div>
+
+                            {formData.mainService && (
+                                <div>
+                                    <label htmlFor="subService" className="block text-sm font-medium text-gray-700">Specific Area *</label>
+                                    <select id="subService" name="subService" value={formData.subService} onChange={handleInputChange} required className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                        <option value="" disabled>-- Select a Specific Area --</option>
+                                        {serviceOptions[formData.mainService as ServiceKey]?.subServices.map(sub => (
+                                            <option key={sub} value={sub.toLowerCase().replace(/[\s/()]+/g, '-')}>{sub}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                            )}
                             <div>
                                 <label htmlFor="points" className="block text-sm font-medium text-gray-700">Briefly describe your case *</label>
                                 <textarea id="points" name="points" value={formData.points} onChange={handleInputChange} rows={4} placeholder="Provide some key points about your case" required className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"></textarea>
                             </div>
-                             <div>
+                            <div>
                                 {submitMessage && <p className="text-center text-green-600 mb-4">{submitMessage}</p>}
                                 <button type="submit" disabled={isSubmitting} className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed">
                                     {isSubmitting ? 'Submitting...' : 'Submit'}
