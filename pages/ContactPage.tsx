@@ -1,47 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { MailIcon, PhoneIcon } from '../components/icons/Icons';
 
-
 // New data structure for services
 const serviceOptions = {
-    'counselling': {
-        label: 'Counselling',
-        subServices: [
-            'Child Counselling',
-            'Relationship Counselling',
-            'Career Counselling'
-        ]
-    },
-    'coaching': {
-        label: 'Coaching',
-        subServices: [
-            'Business Coach',
-            'Life Coach',
-            'Career and Growth'
-        ]
-    },
-    'legal-consultation': {
-        label: 'Legal Consultation',
-        subServices: [
-            'Civil Litigation',
-            'Criminal Litigation',
-            'Corporate Consultation',
-            'Non-Litigation'
-        ]
-    },
-    'strategic-consultation': {
-        label: 'Strategic Consultation',
-        subServices: [
-            'Startups',
-            'MSME',
-            'Corporate',
-            'Pain Points Discussion (Competition/Market Challenges)'
-        ]
-    }
+  'counselling': {
+    label: 'Counselling',
+    subServices: [
+      'Child Counselling',
+      'Relationship Counselling',
+      'Career Counselling'
+    ]
+  },
+  'coaching': {
+    label: 'Coaching',
+    subServices: [
+      'Business Coach',
+      'Life Coach',
+      'Career and Growth'
+    ]
+  },
+  'legal-consultation': {
+    label: 'Legal Consultation',
+    subServices: [
+      'Civil Litigation',
+      'Criminal Litigation',
+      'Corporate Consultation',
+      'Non-Litigation'
+    ]
+  },
+  'strategic-consultation': {
+    label: 'Strategic Consultation',
+    subServices: [
+      'Startups',
+      'MSME',
+      'Corporate',
+      'Pain Points Discussion (Competition/Market Challenges)'
+    ]
+  }
 };
 
 type ServiceKey = keyof typeof serviceOptions;
-
 
 
 interface FormData {
@@ -52,7 +50,8 @@ interface FormData {
     hour: string;
     minute: string;
     ampm: string;
-    service: string;
+    mainService: string;
+    subService: string;
     points: string;
 }
 
@@ -61,6 +60,10 @@ interface FormErrors {
 }
 
 const ContactPage: React.FC = () => {
+    useEffect(() => {
+        document.title = "Contact | Dr. Ashutosh Mishra - Book an Appointment";
+    }, []);
+
     const initialFormData: FormData = {
         name: '',
         email: '',
@@ -69,7 +72,8 @@ const ContactPage: React.FC = () => {
         hour: '10',
         minute: '00',
         ampm: 'AM',
-        service: '',
+        mainService: '',
+        subService: '',
         points: '',
     };
 
@@ -77,15 +81,16 @@ const ContactPage: React.FC = () => {
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
+    
     // --- State for dynamic dropdown options ---
     const [availableHours, setAvailableHours] = useState<string[]>(['10', '11']);
     const [availableMinutes, setAvailableMinutes] = useState<string[]>(['00', '15', '30', '45']);
 
     const allMinutes = ['00', '15', '30', '45'];
-
+    
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-
+        
         if (name === 'mainService') {
             // If main service changes, reset sub-service
             setFormData(prev => ({
@@ -112,7 +117,7 @@ const ContactPage: React.FC = () => {
         if (!currentHours.includes(formData.hour)) {
             setFormData(prev => ({ ...prev, hour: currentHours[0] }));
         }
-
+        
         // Handle the 5:00 PM edge case
         if (formData.ampm === 'PM' && formData.hour === '05') {
             setAvailableMinutes(['00']);
@@ -125,7 +130,7 @@ const ContactPage: React.FC = () => {
 
     }, [formData.ampm, formData.hour, formData.minute]);
 
-
+    
     const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setErrors({});
@@ -154,17 +159,17 @@ const ContactPage: React.FC = () => {
     return (
         <div className="bg-white py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl font-extrabold font-heading text-primary">Book an Appointment</h1>
+                <header className="text-center mb-16" aria-labelledby="page-heading-contact">
+                    <h1 id="page-heading-contact" className="text-4xl font-extrabold font-heading text-primary">Book an Appointment</h1>
                     <p className="mt-4 max-w-3xl mx-auto text-xl text-gray-600">
                         Schedule a consultation to discuss your case. Working hours are 10 AM to 5 PM.
                     </p>
-                </div>
+                </header>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-light-bg p-8 md:p-12 rounded-lg shadow-lg">
                     {/* Contact Info */}
-                    <div>
-                        <h2 className="text-2xl font-bold font-heading text-secondary">Contact Information</h2>
+                    <section aria-labelledby="contact-info-heading">
+                        <h2 id="contact-info-heading" className="text-2xl font-bold font-heading text-secondary">Contact Information</h2>
                         <p className="mt-3 text-gray-600">
                             For any immediate queries or assistance, you can also reach out via the following channels.
                         </p>
@@ -173,11 +178,11 @@ const ContactPage: React.FC = () => {
                                 <MailIcon />
                                 <div>
                                     <h3 className="font-semibold">Email</h3>
-                                    <a href="mailto:write2me@dramishra.in" className="text-primary hover:underline">write2me@dramishra.in</a><br />
+                                    <a href="mailto:write2me@dramishra.in" className="text-primary hover:underline">write2me@dramishra.in</a><br/>
                                     <a href="mailto:advdrashutosh.mishra@gmail.com" className="text-primary hover:underline">advdrashutosh.mishra@gmail.com</a>
                                 </div>
                             </div>
-                            <div className="flex items-center space-x-3">
+                             <div className="flex items-center space-x-3">
                                 <PhoneIcon />
                                 <div>
                                     <h3 className="font-semibold">Phone</h3>
@@ -189,10 +194,10 @@ const ContactPage: React.FC = () => {
                                 <p className="text-gray-700">#511, 5th Floor, Skyline Plaza 1, Behind Lulu Mall, Sushant Golf City, Lucknow</p>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
                     {/* Appointment Form */}
-                    <div>
+                    <section aria-label="Appointment booking form">
                         <form onSubmit={handleFormSubmit} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name *</label>
@@ -208,16 +213,16 @@ const ContactPage: React.FC = () => {
                                     <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleInputChange} placeholder="Enter Your Phone Number" required className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary" />
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="date" className="block text-sm font-medium text-gray-700">Preferred Date *</label>
-                                    <input
-                                        type="date"
-                                        name="date"
+                                    <input 
+                                        type="date" 
+                                        name="date" 
                                         id="date"
                                         value={formData.date}
                                         onChange={handleInputChange}
-                                        required
+                                        required 
                                         className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
                                     />
                                     {errors.date && <p className="mt-1 text-xs text-red-600">{errors.date}</p>}
@@ -225,13 +230,13 @@ const ContactPage: React.FC = () => {
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700">Preferred Time *</label>
                                     <div className="mt-1 flex items-center space-x-2">
-                                        <select name="hour" value={formData.hour} onChange={handleInputChange} required className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                        <select name="hour" value={formData.hour} onChange={handleInputChange} required className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary" aria-label="Hour">
                                             {availableHours.map(h => <option key={h} value={h}>{h}</option>)}
                                         </select>
-                                        <select name="minute" value={formData.minute} onChange={handleInputChange} required className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                        <select name="minute" value={formData.minute} onChange={handleInputChange} required className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary" aria-label="Minute">
                                             {availableMinutes.map(m => <option key={m} value={m}>{m}</option>)}
                                         </select>
-                                        <select name="ampm" value={formData.ampm} onChange={handleInputChange} required className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                        <select name="ampm" value={formData.ampm} onChange={handleInputChange} required className="block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary" aria-label="AM/PM">
                                             <option value="AM">AM</option>
                                             <option value="PM">PM</option>
                                         </select>
@@ -263,14 +268,14 @@ const ContactPage: React.FC = () => {
                                 <label htmlFor="points" className="block text-sm font-medium text-gray-700">Briefly describe your case *</label>
                                 <textarea id="points" name="points" value={formData.points} onChange={handleInputChange} rows={4} placeholder="Provide some key points about your case" required className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"></textarea>
                             </div>
-                            <div>
-                                {submitMessage && <p className="text-center text-green-600 mb-4">{submitMessage}</p>}
+                             <div>
+                                {submitMessage && <p className="text-center text-green-600 mb-4" role="alert">{submitMessage}</p>}
                                 <button type="submit" disabled={isSubmitting} className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed">
                                     {isSubmitting ? 'Submitting...' : 'Submit'}
                                 </button>
                             </div>
                         </form>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>

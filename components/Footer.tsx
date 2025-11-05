@@ -5,19 +5,18 @@ import { LinkedInIcon, MailIcon, PhoneIcon } from './icons/Icons';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-secondary text-white">
+    <footer className="bg-secondary text-white" role="contentinfo">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          <div>
-            <h3 className="text-lg font-bold font-heading mb-4">Dr. Ashutosh Mishra</h3>
+          <div aria-labelledby="footer-about-heading">
+            <h3 id="footer-about-heading" className="text-lg font-bold font-heading mb-4">Dr. Ashutosh Mishra</h3>
             <p className="text-gray-300 text-sm">
               With over 22 years of experience, Dr. Mishra bridges academia, legal expertise, and business strategy, driving educational innovation and organizational growth.
             </p>
           </div>
 
-          <div>
-            <h3 className="text-lg font-bold font-heading mb-4">Services</h3>
+          <div aria-labelledby="footer-services-heading">
+            <h3 id="footer-services-heading" className="text-lg font-bold font-heading mb-4">Services</h3>
             <ul className="space-y-2">
               {services.slice(0, 5).map((service, index) => (
                 <li key={index}>
@@ -29,8 +28,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-lg font-bold font-heading mb-4">Contact Information</h3>
+          <div aria-labelledby="footer-contact-heading">
+            <h3 id="footer-contact-heading" className="text-lg font-bold font-heading mb-4">Contact Information</h3>
             <div className="space-y-3 text-sm text-gray-300">
               <p><strong>Registered Office:</strong><br />#511, 5th Floor, Skyline Plaza 1, Behind Lulu Mall, Sushant Golf City, Lucknow</p>
               <a href="mailto:write2me@dramishra.in" className="flex items-center space-x-2 hover:text-accent-teal transition-colors">
@@ -44,8 +43,8 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-bold font-heading mb-4">Quick Links</h3>
+           <div aria-labelledby="footer-links-heading">
+            <h3 id="footer-links-heading" className="text-lg font-bold font-heading mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {navLinks
                 .filter(link => link.name !== 'Home' && link.name !== 'Services')
