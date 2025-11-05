@@ -45,6 +45,7 @@ export const keyExpertise = [
   "Advocacy and Legal Operations", "Human Resource Management", "Risk Management",
   "Business Development", "Strategic Planning", "Institutional Development",
   "Educational Innovation", "Legal Policy Advisory", "Organizational Growth Strategy",
+  "NLP Coach", "Psychological Profiling",
 ];
 
 export const certifications = [

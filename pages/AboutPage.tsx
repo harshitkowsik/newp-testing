@@ -64,6 +64,11 @@ const AboutPage: React.FC = () => {
             />
             <h2 className="mt-6 text-2xl font-bold text-secondary font-heading">Dr. Ashutosh Mishra</h2>
             <p className="text-gray-500">PhD, MBA, B.Ed, LL.M.</p>
+            <div className="mt-4 text-sm font-semibold text-primary space-y-1">
+              <p>IIM Ahmedabad Alumnus</p>
+              <p>Project Management (IIT Delhi)</p>
+              <p>Certified NLP Coach</p>
+            </div>
           </div>
 
           <div className="lg:col-span-2 mt-12 lg:mt-0">
@@ -73,6 +78,24 @@ const AboutPage: React.FC = () => {
             </p>
           </div>
         </div>
+
+         <section className="mt-20">
+            <h3 className="text-3xl font-bold font-heading text-center text-primary">Signature Strengths</h3>
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-light-bg p-6 rounded-lg text-center shadow-md border-t-4 border-accent-gold">
+                    <h4 className="text-xl font-bold text-secondary">IIM Ahmedabad Alumnus</h4>
+                    <p className="mt-2 text-gray-600">Leveraging strategic insights and leadership principles from one of India’s premier institutions to drive business excellence.</p>
+                </div>
+                <div className="bg-light-bg p-6 rounded-lg text-center shadow-md border-t-4 border-accent-teal">
+                    <h4 className="text-xl font-bold text-secondary">Project Management (IIT Delhi)</h4>
+                    <p className="mt-2 text-gray-600">Applying rigorous, process-driven project management methodologies to ensure flawless execution and delivery.</p>
+                </div>
+                <div className="bg-light-bg p-6 rounded-lg text-center shadow-md border-t-4 border-primary">
+                    <h4 className="text-xl font-bold text-secondary">Certified NLP Coach</h4>
+                    <p className="mt-2 text-gray-600">Utilizing Neuro-Linguistic Programming for advanced psychological profiling, enhancing communication and leadership effectiveness.</p>
+                </div>
+            </div>
+        </section>
 
         <section className="mt-20">
           <h3 className="text-3xl font-bold font-heading text-center text-primary">Core Philosophy: The 4 F's of Leadership</h3>
