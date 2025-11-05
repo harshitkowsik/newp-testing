@@ -1,0 +1,27 @@
+{
+  "name": "dr.-ashutosh-mishra---professional-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.5",
+    "react-helmet-async": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  },
+  "description": "This repository contains the source code for the personal portfolio website of Dr. Ashutosh Mishra. The site is a modern, responsive single-page application (SPA) built with React and TypeScript, designed to showcase his professional experience, services, publications, and ventures.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}
