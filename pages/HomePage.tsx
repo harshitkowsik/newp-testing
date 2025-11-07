@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link to="/about" className="bg-accent-gold text-secondary hover:bg-accent-gold/90 font-bold py-3 px-8 rounded-full text-lg transition duration-300">
-              Learn More
+              Know More
             </Link>
             <Link to="/contact" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-full text-lg transition duration-300">
               Book Appointment
