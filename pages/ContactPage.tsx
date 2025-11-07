@@ -3,40 +3,40 @@ import { MailIcon, PhoneIcon } from '../components/icons/Icons';
 
 // New data structure for services
 const serviceOptions = {
-  'counselling': {
-    label: 'Counselling',
-    subServices: [
-      'Child Counselling',
-      'Relationship Counselling',
-      'Career Counselling'
-    ]
-  },
-  'coaching': {
-    label: 'Coaching',
-    subServices: [
-      'Business Coach',
-      'Life Coach',
-      'Career and Growth'
-    ]
-  },
-  'legal-consultation': {
-    label: 'Legal Consultation',
-    subServices: [
-      'Civil Litigation',
-      'Criminal Litigation',
-      'Corporate Consultation',
-      'Non-Litigation'
-    ]
-  },
-  'strategic-consultation': {
-    label: 'Strategic Consultation',
-    subServices: [
-      'Startups',
-      'MSME',
-      'Corporate',
-      'Pain Points Discussion (Competition/Market Challenges)'
-    ]
-  }
+    'counselling': {
+        label: 'Counselling',
+        subServices: [
+            'Child Counselling',
+            'Relationship Counselling',
+            'Career Counselling'
+        ]
+    },
+    'coaching': {
+        label: 'Coaching',
+        subServices: [
+            'Business Coach',
+            'Life Coach',
+            'Career and Growth'
+        ]
+    },
+    'legal-consultation': {
+        label: 'Legal Consultation',
+        subServices: [
+            'Civil Litigation',
+            'Criminal Litigation',
+            'Corporate Consultation',
+            'Non-Litigation'
+        ]
+    },
+    'strategic-consultation': {
+        label: 'Strategic Consultation',
+        subServices: [
+            'Startups',
+            'MSME',
+            'Corporate',
+            'Pain Points Discussion (Competition/Market Challenges)'
+        ]
+    }
 };
 
 type ServiceKey = keyof typeof serviceOptions;
@@ -81,16 +81,16 @@ const ContactPage: React.FC = () => {
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
-    
+
     // --- State for dynamic dropdown options ---
     const [availableHours, setAvailableHours] = useState<string[]>(['10', '11']);
     const [availableMinutes, setAvailableMinutes] = useState<string[]>(['00', '15', '30', '45']);
 
     const allMinutes = ['00', '15', '30', '45'];
-    
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        
+
         if (name === 'mainService') {
             // If main service changes, reset sub-service
             setFormData(prev => ({
@@ -117,7 +117,7 @@ const ContactPage: React.FC = () => {
         if (!currentHours.includes(formData.hour)) {
             setFormData(prev => ({ ...prev, hour: currentHours[0] }));
         }
-        
+
         // Handle the 5:00 PM edge case
         if (formData.ampm === 'PM' && formData.hour === '05') {
             setAvailableMinutes(['00']);
@@ -130,7 +130,7 @@ const ContactPage: React.FC = () => {
 
     }, [formData.ampm, formData.hour, formData.minute]);
 
-    
+
     const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setErrors({});
@@ -146,13 +146,36 @@ const ContactPage: React.FC = () => {
 
         setIsSubmitting(true);
         setSubmitMessage('');
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
 
-        console.log('Form Submitted:', formData);
-        setSubmitMessage('Thank you for your appointment request. We will contact you shortly to confirm.');
-        setFormData(initialFormData);
-        setIsSubmitting(false);
+        const formObject = {
+            ...formData,
+            access_key: "e79d8866-b6df-490d-89f0-e1b9402c1d99",
+            subject: "Dr A. Mishra - New Appointent Booking",
+        };
+
+        const json = JSON.stringify(formObject);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: json,
+            });
+            const result = await response.json();
+            if (result.success) {
+                setSubmitMessage("Thank you for your request. We will contact you back shortly.");
+                setFormData(initialFormData);
+            } else {
+                setSubmitMessage("There was an error submitting your request. Please try again.");
+            }
+        } catch (error) {
+            setSubmitMessage("There was an error submitting your request. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
 
@@ -178,11 +201,11 @@ const ContactPage: React.FC = () => {
                                 <MailIcon />
                                 <div>
                                     <h3 className="font-semibold">Email</h3>
-                                    <a href="mailto:write2me@dramishra.in" className="text-primary hover:underline">write2me@dramishra.in</a><br/>
+                                    <a href="mailto:write2me@dramishra.in" className="text-primary hover:underline">write2me@dramishra.in</a><br />
                                     <a href="mailto:advdrashutosh.mishra@gmail.com" className="text-primary hover:underline">advdrashutosh.mishra@gmail.com</a>
                                 </div>
                             </div>
-                             <div className="flex items-center space-x-3">
+                            <div className="flex items-center space-x-3">
                                 <PhoneIcon />
                                 <div>
                                     <h3 className="font-semibold">Phone</h3>
@@ -213,16 +236,16 @@ const ContactPage: React.FC = () => {
                                     <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleInputChange} placeholder="Enter Your Phone Number" required className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary" />
                                 </div>
                             </div>
-                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="date" className="block text-sm font-medium text-gray-700">Preferred Date *</label>
-                                    <input 
-                                        type="date" 
-                                        name="date" 
+                                    <input
+                                        type="date"
+                                        name="date"
                                         id="date"
                                         value={formData.date}
                                         onChange={handleInputChange}
-                                        required 
+                                        required
                                         className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
                                     />
                                     {errors.date && <p className="mt-1 text-xs text-red-600">{errors.date}</p>}
@@ -268,11 +291,11 @@ const ContactPage: React.FC = () => {
                                 <label htmlFor="points" className="block text-sm font-medium text-gray-700">Briefly describe your case *</label>
                                 <textarea id="points" name="points" value={formData.points} onChange={handleInputChange} rows={4} placeholder="Provide some key points about your case" required className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"></textarea>
                             </div>
-                             <div>
-                                {submitMessage && <p className="text-center text-green-600 mb-4" role="alert">{submitMessage}</p>}
+                            <div>
                                 <button type="submit" disabled={isSubmitting} className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed">
                                     {isSubmitting ? 'Submitting...' : 'Submit'}
-                                </button>
+                                </button><br></br>
+                                {submitMessage && <p className="text-center text-green-600 mb-4" role="alert">{submitMessage}</p>}
                             </div>
                         </form>
                     </section>
