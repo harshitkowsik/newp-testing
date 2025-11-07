@@ -47,7 +47,7 @@ const HomePage: React.FC = () => {
               <p className="text-gray-600 mt-2">Leadership Roles</p>
             </div>
             <div className="p-4">
-              <p className="text-4xl font-bold text-primary">Adv.</p>
+              <p className="text-4xl font-bold text-primary">Member</p>
               <p className="text-gray-600 mt-2">Supreme Court of India</p>
             </div>
           </div>

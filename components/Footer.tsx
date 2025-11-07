@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { services, navLinks } from '../constants';
-import { LinkedInIcon, MailIcon, PhoneIcon } from './icons/Icons';
+import { LinkedInIcon, MailIcon, PhoneIcon, TwitterIcon, FacebookIcon, InstagramIcon } from './icons/Icons';
 
 const Footer: React.FC = () => {
   return (
@@ -13,6 +13,20 @@ const Footer: React.FC = () => {
             <p className="text-gray-300 text-sm">
               With over 22 years of experience, Dr. Mishra bridges academia, legal expertise, and business strategy, driving educational innovation and organizational growth.
             </p>
+            <div className="mt-4 flex space-x-4">
+              <a href="https://www.linkedin.com/in/dramishra/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="LinkedIn">
+                <LinkedInIcon />
+              </a>
+              <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Twitter">
+                <TwitterIcon />
+              </a>
+              <a href="https://facebook.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Facebook">
+                <FacebookIcon />
+              </a>
+              <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Instagram">
+                <InstagramIcon />
+              </a>
+            </div>
           </div>
 
           <div aria-labelledby="footer-services-heading">
