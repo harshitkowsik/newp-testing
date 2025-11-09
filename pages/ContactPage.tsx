@@ -151,6 +151,7 @@ const ContactPage: React.FC = () => {
             ...formData,
             access_key: "e79d8866-b6df-490d-89f0-e1b9402c1d99",
             subject: "Dr A. Mishra - New Appointent Booking",
+            from_name: "Dr A. Mishra New Appointment",
         };
 
         const json = JSON.stringify(formObject);

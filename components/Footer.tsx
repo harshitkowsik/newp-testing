@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { services, navLinks } from '../constants';
-import { LinkedInIcon, MailIcon, PhoneIcon, TwitterIcon, FacebookIcon, InstagramIcon } from './icons/Icons';
+import { LinkedInIcon, MailIcon, PhoneIcon, TwitterIcon, FacebookIcon, InstagramIcon, YouTubeIcon } from './icons/Icons';
 
 const Footer: React.FC = () => {
   return (
@@ -25,6 +25,9 @@ const Footer: React.FC = () => {
               </a>
               <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Instagram">
                 <InstagramIcon />
+              </a>
+              <a href="https://www.youtube.com/@advdrmishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="YouTube">
+                <YouTubeIcon />
               </a>
             </div>
           </div>
