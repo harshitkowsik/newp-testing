@@ -17,13 +17,13 @@ const Footer: React.FC = () => {
               <a href="https://www.linkedin.com/in/dramishra/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="LinkedIn">
                 <LinkedInIcon />
               </a>
-              <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Twitter">
+              <a href="https://x.com/drmishra_in" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Twitter">
                 <TwitterIcon />
               </a>
-              <a href="https://facebook.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/advdramishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Facebook">
                 <FacebookIcon />
               </a>
-              <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com/advdramishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Instagram">
                 <InstagramIcon />
               </a>
               <a href="https://www.youtube.com/@advdrmishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="YouTube">
