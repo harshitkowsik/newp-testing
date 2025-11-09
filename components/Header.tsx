@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-24">
           <div className="flex-shrink-0">
             <Link to="/" className="text-primary hover:opacity-80 transition-opacity">
-              <h1 className="text-2xl font-bold font-heading">Dr. Ashutosh Mishra</h1>
+              <h1 className="text-2xl font-bold font-heading">Dr. A. Mishra</h1>
               <p className="text-xs max-w-xs text-gray-600 hidden sm:block">Driving Educational Innovation and Strategic Growth</p>
             </Link>
           </div>
