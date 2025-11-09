@@ -1,5 +1,5 @@
 {
-  "name": "dr.-ashutosh-mishra---professional-portfolio",
+  "name": "Dr. Ashutosh Mishra Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,9 +15,8 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.1.0",
-    "rollup-plugin-visualizer": "^6.0.5",
+    "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
-    "vite": "^6.4.1"
+    "vite": "^6.2.0"
   }
 }

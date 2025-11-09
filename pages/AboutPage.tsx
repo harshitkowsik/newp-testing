@@ -1,8 +1,8 @@
 
-import React, { memo } from 'react';
+import React from 'react';
 import { keyExpertise } from '../constants';
 
-const AboutPage: React.FC = memo(() => {
+const AboutPage: React.FC = () => {
   const leadershipPrinciples = ['Friendly', 'Firm', 'Fair', 'Fit'];
 
   const education = [
@@ -128,6 +128,6 @@ const AboutPage: React.FC = memo(() => {
       </div>
     </div>
   );
-});
+};
 
 export default AboutPage;
