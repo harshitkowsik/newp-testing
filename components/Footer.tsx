@@ -14,19 +14,19 @@ const Footer: React.FC = () => {
               With over 22 years of experience, Dr. Mishra bridges academia, legal expertise, and business strategy, driving educational innovation and organizational growth.
             </p>
             <div className="mt-4 flex space-x-4">
-              <a href="https://www.linkedin.com/in/dramishra/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/dramishra/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="LinkedIn" title="LinkedIn">
                 <LinkedInIcon />
               </a>
-              <a href="https://x.com/drmishra_in" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Twitter">
+              <a href="https://x.com/drmishra_in" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Twitter" title="Twitter">
                 <TwitterIcon />
               </a>
-              <a href="https://www.facebook.com/advdramishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/advdramishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Facebook" title="Facebook">
                 <FacebookIcon />
               </a>
-              <a href="https://instagram.com/advdramishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com/advdramishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="Instagram" title="Instagram">
                 <InstagramIcon />
               </a>
-              <a href="https://www.youtube.com/@advdrmishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/@advdrmishra" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-accent-teal transition-colors" aria-label="YouTube" title="YouTube">
                 <YouTubeIcon />
               </a>
             </div>
