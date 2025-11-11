@@ -1,0 +1,21 @@
+{
+  "short_name": "Dr. Mishra",
+  "name": "Dr. Ashutosh Mishra - Professional Portfolio",
+  "description": "Explore the professional portfolio of Dr. Ashutosh Mishra, an IIM Ahmedabad Alumnus and Strategic Consultant. Discover his expertise in legal operations, educational innovation, project management (IIT Delhi), and NLP coaching.",
+  "icons": [
+    {
+      "src": "fab-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "fab-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0D47A1",
+  "background_color": "#ffffff"
+}
